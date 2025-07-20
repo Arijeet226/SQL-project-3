@@ -45,7 +45,7 @@ ensure consistent avalaibility and faster delivery*/
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total%20revenue%20VS%20Item.png)
 
 
-##Top_5 spending customers
+## Top_5 spending customers
 ```sql
 SELECT c.customer_name,SUM(m.price*od.quantity) AS total_revenue
 FROM menu_item m
@@ -65,7 +65,7 @@ Try to implement those readings in the loss making businesses to attract custome
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total%20revenue%20VS%20customers.png)
 
 
-##Resturant wise order
+## Resturant wise order
 ```sql
 SELECT r.rest_name,COUNT(o.order_id)AS order_count
 FROM orders o
@@ -81,7 +81,7 @@ To ensure the top runner to remain in this game as toppers try to follow trendy 
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/ORDER_COUNT%20%20vs%20RESTURANT.png)
 
 
-##Average order value by city
+## Average order value by city
 ```sql
 SELECT r.city,AVG(m.price*od.quantity) AS total_revenue
 FROM order_details od
@@ -98,7 +98,7 @@ ORDER BY total_revenue DESC;
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Average%20revenue%20vs.%20city.png)
 
 
-##Monthly order trend
+## Monthly order trend
 ```sql
 SELECT MONTH(order_date)AS month_number,MONTHNAME(order_date)AS order_month,COUNT(order_id)AS total_orders
 FROM orders
@@ -112,7 +112,7 @@ plan time sensitive discount or campaigns*/
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total_orders%20vs.%20Order_month.png)
 
 
-##Top 3 city by revenue
+## Top 3 city by revenue
 ```sql
 SELECT c.city,SUM(m.price*od.quantity) AS total_revenue
 FROM customers c
@@ -130,7 +130,7 @@ LIMIT 3;
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/TOTAL%20REVENUE%20TOP%203%20CITY.png)
 
 
-##number of_unique_customer by_city
+## number of_unique_customer by_city
 ```sql
 SELECT city, COUNT(DISTINCT customer_id) AS number_of_customer
 FROM customers
@@ -142,7 +142,7 @@ try to focus on the least in terms of customers like JAIPUR*/
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Number_of_customer%20vs.%20city.png)
 
 
-##most frequently order items
+## most frequently order items
 ```sql
 SELECT m.item_name,SUM(od.order_id)AS total_orders
 FROM menu_item m
@@ -154,7 +154,7 @@ ORDER BY total_orders DESC;
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total%20orders%20VS%20Items.png)
 
 
-##resturant withy lower order count less than 30
+## resturant withy lower order count less than 30
 ```sql
 SELECT r.rest_name,COUNT(o.order_id) AS orders_count
 FROM resturant r
