@@ -10,6 +10,8 @@ DAY-7-Focuses on  summarizing queries which are relevant to get business by extr
 DAY-8-Focuses on the same topic as of the previous day in addition some of the important date functions
 DAY-9-10- Focuses on creating the visualization of each queries result and a final report  carved out of Canva to summarize all the day's work in a single document.
 # Summary queries
+
+
 ## Total orders per city
 ```sql
 SELECT r.city,COUNT(o.order_id)AS total_order
@@ -25,6 +27,8 @@ ORDER BY total_order DESC;
 --improve operations in other cities*/
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total_order%20vs.%20city.png)
+
+
 ## Revenue generated_each_food item
 ```sql
 SELECT m.item_name,SUM(m.price*od.quantity) AS total_revenue
@@ -39,6 +43,8 @@ promote it more prominently on app
 ensure consistent avalaibility and faster delivery*/
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total%20revenue%20VS%20Item.png)
+
+
 ##Top_5 spending customers
 ```sql
 SELECT c.customer_name,SUM(m.price*od.quantity) AS total_revenue
@@ -57,6 +63,8 @@ list and track their favourite resturant and the food ordered by them and find t
 Try to implement those readings in the loss making businesses to attract customers.*/
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total%20revenue%20VS%20customers.png)
+
+
 ##Resturant wise order
 ```sql
 SELECT r.rest_name,COUNT(o.order_id)AS order_count
@@ -71,6 +79,8 @@ and study the business approach of the top runner in this list and apply those t
 To ensure the top runner to remain in this game as toppers try to follow trendy ideas to increase the frequency of order*/
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/ORDER_COUNT%20%20vs%20RESTURANT.png)
+
+
 ##Average order value by city
 ```sql
 SELECT r.city,AVG(m.price*od.quantity) AS total_revenue
@@ -86,6 +96,8 @@ ORDER BY total_revenue DESC;
  expansion strategies , need to improve operations in other cities*/
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Average%20revenue%20vs.%20city.png)
+
+
 ##Monthly order trend
 ```sql
 SELECT MONTH(order_date)AS month_number,MONTHNAME(order_date)AS order_month,COUNT(order_id)AS total_orders
@@ -98,6 +110,8 @@ impacts of festivals,holidays ,weather
 plan time sensitive discount or campaigns*/
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total_orders%20vs.%20Order_month.png)
+
+
 ##Top 3 city by revenue
 ```sql
 SELECT c.city,SUM(m.price*od.quantity) AS total_revenue
@@ -114,6 +128,8 @@ LIMIT 3;
 /*CHENNAI,PUNE,BANGALORE are the top 3*/
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/TOTAL%20REVENUE%20TOP%203%20CITY.png)
+
+
 ##number of_unique_customer by_city
 ```sql
 SELECT city, COUNT(DISTINCT customer_id) AS number_of_customer
@@ -124,6 +140,8 @@ ORDER BY number_of_customer DESC;
 try to focus on the least in terms of customers like JAIPUR*/
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Number_of_customer%20vs.%20city.png)
+
+
 ##most frequently order items
 ```sql
 SELECT m.item_name,SUM(od.order_id)AS total_orders
@@ -134,6 +152,8 @@ GROUP BY m.item_name
 ORDER BY total_orders DESC;
 ```
 ![](https://github.com/Arijeet226/SQL-project-3-20.7.2025/blob/dac1a6d26a9fac994219594a1f0be3a5bd6c5c25/visualizations/Total%20orders%20VS%20Items.png)
+
+
 ##resturant withy lower order count less than 30
 ```sql
 SELECT r.rest_name,COUNT(o.order_id) AS orders_count
